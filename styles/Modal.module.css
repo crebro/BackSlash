@@ -1,0 +1,12 @@
+@keyframes bottomDownAnimation {
+  from {
+    top: -384px;
+  }
+  to {
+    top: 2.5rem;
+  }
+}
+
+.modal {
+  animation: bottomDownAnimation 200ms;
+}
