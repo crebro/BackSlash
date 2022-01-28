@@ -27,7 +27,7 @@ function DeveloperTemplates() {
         <div className='mt-4'>
             {
                 templateItems ? 
-                templateItems.map((template) => <div key={templateItems.indexOf(template)}> <Template title={template['name']} description={template['description']} identifier={template['identifier']} /> </div>) : ""
+                templateItems.map((template) => <div key={templateItems.indexOf(template)}> <Template title={template['name']} description={template['description']} id={template['id']} /> </div>) : ""
             }
         </div>
     </div>

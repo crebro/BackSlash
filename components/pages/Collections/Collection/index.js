@@ -9,8 +9,8 @@ function Collection({title, description}) {
         <div> {description} </div>
       </div>
       <div className='ml-20'>
-        <div className='bg-[#3f4246] w-40 text-sm flex px-4 py-2 justify-between items-center text-white rounded-sm'> Use <BsLink45Deg/> </div>
-        <div className='bg-[#32649F] w-40 text-sm flex px-4 py-2 justify-between items-center text-white rounded-sm'> View Details <BsInfoLg/> </div>
+        <div className='bg-[#3f4246] w-40 text-sm flex px-4 py-2 justify-between items-center text-white rounded-sm cursor-pointer'> Use <BsLink45Deg/> </div>
+        <div className='bg-[#32649F] w-40 text-sm flex px-4 py-2 justify-between items-center text-white rounded-sm cursor-pointer'> View Details <BsInfoLg/> </div>
       </div>
   </div>;
 }
