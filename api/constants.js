@@ -11,6 +11,8 @@ export const routes = {
     ownedTemplates: `${requestLocation}/templates/owned`,
     getTemplateRequirements: (template_id) => `${requestLocation}/templates/${template_id}/requirements`,
     deleteTemplateRequirement: `${requestLocation}/templates/requirements/delete`,
-    createTemplateRequirement: `${requestLocation}/templates/requirements/add`
+    createTemplateRequirement: `${requestLocation}/templates/requirements/add`,
+    updateTemplate: `${requestLocation}/templates/update`,
+    deleteTemplate: `${requestLocation}/templates/delete`
 }
 

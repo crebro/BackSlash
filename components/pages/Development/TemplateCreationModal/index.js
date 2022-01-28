@@ -1,14 +1,14 @@
 import { createTemplate } from '@api/requests/templates';
 import Modal from '@components/Modal';
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import toast from 'react-hot-toast';
 
-function TemplateCreationModal({ onClose }) {
+function TemplateCreationModal({ onClose, onTemplateCreate }) {
     const nameRef = useRef();
     const descriptionRef = useRef();
     const tempmlateUrlRef = useRef();
 
-    const submit = () => {
+    const submit = () => {;
         const nameValue = nameRef.current.value;
         const descriptionValue =  descriptionRef.current.value;
         const templateUrlValue = tempmlateUrlRef.current.value;
@@ -17,8 +17,9 @@ function TemplateCreationModal({ onClose }) {
             toast.error("Please fill in all the fields");
             return;
         }
-        const creationPromise = createTemplate({ name: nameValue, description: descriptionValue, template_url: templateUrlValue}).catch((error) => {
-            console.log(error.response.data);
+        const creationPromise = createTemplate({ name: nameValue, description: descriptionValue, template_url: templateUrlValue}).then(() => {
+            onTemplateCreate();
+            onClose();
         });
         toast.promise(creationPromise, {
             loading: "Creating a Template...",

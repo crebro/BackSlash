@@ -4,8 +4,9 @@ import React from 'react';
 import toast from 'react-hot-toast';
 import { useEffect, useRef, useState } from 'react/cjs/react.development';
 import Requirement from './widgets/requirement';
+import { AiFillCloseCircle } from "react-icons/ai";
 
-function TemplateRequirementsModal({ id }) {
+function TemplateRequirementsModal({ id, onModalClose }) {
     const [requirements, setRequirements] = useState([]);
     const newRequirementRef = useRef();
     const isRequiredRef = useRef();
@@ -45,6 +46,7 @@ function TemplateRequirementsModal({ id }) {
     }, [])
 
   return <Modal>
+        <div className='absolute cursor-pointer rounded-lg bg-red-500 text-white px-2 py-2 top-[10px] right-[10px]' onClick={() => onModalClose()}> <AiFillCloseCircle/> </div>
         <div className='font-bold font-poppins'> Edit your template requirements</div>
         <div>
             <input ref={newRequirementRef} type="text" className='w-full py-2 px-4 outline-none bg-[#C4C4C4] rounded-sm mt-2' placeholder="Your Requirement key that you will recieve as" />

@@ -16,8 +16,8 @@ function Requirement({ id, requirementKey, is_required, type, template_id, onDel
     }
 
   return <div className='flex items-center'> 
-      <div className='bg-[#CED4DA] my-2 rounded-sm px-4 py-2 w-full flex items-center justify-between'>  <div>{requirementKey} </div> { is_required ? <div className='text-sm px-2 py-1 bg-green-600 text-white rounded-sm' > is required</div> : "" } </div> 
-      <div onClick={() => deleteRequirement()} className='p-2 bg-red-500 rounded-lg text-white cursor-pointer'> <IoMdRemoveCircle size={30}/> </div>
+      <div className='bg-[#CED4DA] my-2 rounded-sm px-4 py-2 w-full flex items-center justify-between'>  <div>{requirementKey} </div> { is_required ? <div className='text-sm px-4 py-2 bg-green-600 text-white rounded-lg' > is required</div> : "" } </div> 
+      <div onClick={() => deleteRequirement()} className='px-2 py-2 aspect-square bg-red-500 rounded-r-lg text-white cursor-pointer'> <IoMdRemoveCircle size={30}/> </div>
   </div>;
 }
 

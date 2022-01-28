@@ -9,12 +9,16 @@ function DeveloperTemplates() {
     const [showTemplateCreationModal, setShowTemplateCreationModal] = useState(false);
     const [templateItems, setTemplateItems] = useState(false);
 
-    useEffect(() => {
+    const getDeveloperTemplates = () => {
         getTemplates().then((response) => {
             if (response.values) {
                 setTemplateItems(response.values);
             }
         })
+    }
+
+    useEffect(() => {
+        getDeveloperTemplates();
     }, [])
 
   return <div className='min-w-screen min-h-screen bg-[#343A40] flex flex-col items-center'>
@@ -25,15 +29,15 @@ function DeveloperTemplates() {
             <div onClick={() => setShowTemplateCreationModal(true)} className='cursor-pointer text-xl text-white px-4 py-2 bg-[#702EFD] rounded-sm font-bold'> Create </div>
         </div>
         <div className='mt-4'>
-            {
-                templateItems ? 
-                templateItems.map((template) => <div key={templateItems.indexOf(template)}> <Template title={template['name']} description={template['description']} id={template['id']} /> </div>) : ""
-            }
+                {
+                    templateItems ? 
+                    templateItems.map((template) => <div key={templateItems.indexOf(template)}> <Template onTemplateUpdate={() => getDeveloperTemplates()} template={{...template}} /> </div>) : ""
+                }
         </div>
     </div>
     {
         showTemplateCreationModal ? 
-        <TemplateCreationModal onClose={() => setShowTemplateCreationModal(false)} /> : ""
+        <TemplateCreationModal onTemplateCreate={() => getDeveloperTemplates()} onClose={() => setShowTemplateCreationModal(false)} /> : ""
     }
   </div>;
 }
