@@ -13,6 +13,6 @@ export const routes = {
     deleteTemplateRequirement: `${requestLocation}/templates/requirements/delete`,
     createTemplateRequirement: `${requestLocation}/templates/requirements/add`,
     updateTemplate: `${requestLocation}/templates/update`,
-    deleteTemplate: `${requestLocation}/templates/delete`
+    deleteTemplate: `${requestLocation}/templates/delete`,
 }
 

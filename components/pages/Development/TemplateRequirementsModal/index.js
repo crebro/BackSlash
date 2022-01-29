@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import { useEffect, useRef, useState } from 'react/cjs/react.development';
 import Requirement from './widgets/requirement';
 import { AiFillCloseCircle } from "react-icons/ai";
+import FlipMove from 'react-flip-move';
 
 function TemplateRequirementsModal({ id, onModalClose }) {
     const [requirements, setRequirements] = useState([]);
@@ -61,11 +62,13 @@ function TemplateRequirementsModal({ id, onModalClose }) {
         <div className='mt-4 text-black font-bold font-poppins'>
             Your Template Requirements
         </div>
+        <FlipMove>
         {
             requirements.map((requirement) => {
                 return <div key={requirements.indexOf(requirement)}> <Requirement id={requirement.id} requirementKey={requirement.key} is_required={requirement.is_required} template_id={id} onDelete={() => {setRequirements(requirements.filter((req) => req.id != requirement.id))}} /> </div>
             })
         }
+        </FlipMove>
   </Modal>;
 }
 

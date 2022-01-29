@@ -4,6 +4,7 @@ import DevelopmentNavigation from '../../components/pages/Development/Navigation
 import TemplateCreationModal from "@components/pages/Development/TemplateCreationModal";
 import { getTemplates } from "@api/requests/templates";
 import Template from "@components/pages/Development/Template";
+import FlipMove from "react-flip-move";
 
 function DeveloperTemplates() {
     const [showTemplateCreationModal, setShowTemplateCreationModal] = useState(false);
@@ -31,7 +32,7 @@ function DeveloperTemplates() {
         <div className='mt-4'>
                 {
                     templateItems ? 
-                    templateItems.map((template) => <div key={templateItems.indexOf(template)}> <Template onTemplateUpdate={() => getDeveloperTemplates()} template={{...template}} /> </div>) : ""
+                    <FlipMove>{templateItems.map((template) => <div key={templateItems.indexOf(template)}> <Template onTemplateUpdate={() => getDeveloperTemplates()} template={{...template}} /> </div>)}</FlipMove> : ""
                 }
         </div>
     </div>
