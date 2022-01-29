@@ -54,7 +54,7 @@ function TemplateRequirementsModal({ id, onModalClose }) {
             <div className='flex items-center my-2'> Is Required Requirement &nbsp; <input type="checkbox" ref={isRequiredRef} /> </div>
             <select className='w-full py-2 mb-2 px-4 outline-none bg-[#C4C4C4] rounded-sm' ref={requirementTypeRef}>
                 <option value="text">Text </option>
-                <option value="int">Integer / Numeric </option>
+                <option value="color">Color </option>
                 <option value="date">Date</option>
             </select>
             <button onClick={() => createRequirement()} className='w-full rounded-lg py-2 px-4 outline-none bg-[#702EFD] text-white font-poppins font-bold' > Create </button>

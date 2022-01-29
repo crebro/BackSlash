@@ -14,5 +14,8 @@ export const routes = {
     createTemplateRequirement: `${requestLocation}/templates/requirements/add`,
     updateTemplate: `${requestLocation}/templates/update`,
     deleteTemplate: `${requestLocation}/templates/delete`,
+    exploreTemplates: (searchTerm, perpage=10) => `${requestLocation}/templates/search?query=${searchTerm}&perpage=${perpage}`,
+    createWorkingTemplate: `${requestLocation}/working_templates/create`,
+    getWorkingTemplates: `${requestLocation}/working_templates/owned`
 }
 

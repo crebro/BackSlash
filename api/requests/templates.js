@@ -69,3 +69,9 @@ export const deleteTemplate  = async ({template_id}) => {
     return data;
 }
 
+export const searchTemplates = async ({query}) => {
+    const response = await getRequest(routes.exploreTemplates(query),);
+    const data = await response.json();
+    return data;
+}
+

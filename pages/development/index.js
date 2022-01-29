@@ -8,12 +8,12 @@ import FlipMove from "react-flip-move";
 
 function DeveloperTemplates() {
     const [showTemplateCreationModal, setShowTemplateCreationModal] = useState(false);
-    const [templateItems, setTemplateItems] = useState(false);
+    const [templates, setTemplates] = useState([]);
 
     const getDeveloperTemplates = () => {
         getTemplates().then((response) => {
             if (response.values) {
-                setTemplateItems(response.values);
+                setTemplates(response.values);
             }
         })
     }
@@ -30,10 +30,9 @@ function DeveloperTemplates() {
             <div onClick={() => setShowTemplateCreationModal(true)} className='cursor-pointer text-xl text-white px-4 py-2 bg-[#702EFD] rounded-sm font-bold'> Create </div>
         </div>
         <div className='mt-4'>
-                {
-                    templateItems ? 
-                    <FlipMove>{templateItems.map((template) => <div key={templateItems.indexOf(template)}> <Template onTemplateUpdate={() => getDeveloperTemplates()} template={{...template}} /> </div>)}</FlipMove> : ""
-                }
+            <FlipMove>
+                {templates.map((template) => <div key={templates.indexOf(template)}> <Template onTemplateUpdate={() => getDeveloperTemplates()} template={{...template}} /> </div>)}
+            </FlipMove>
         </div>
     </div>
     {
