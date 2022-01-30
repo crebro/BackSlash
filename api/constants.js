@@ -16,6 +16,8 @@ export const routes = {
     deleteTemplate: `${requestLocation}/templates/delete`,
     exploreTemplates: (searchTerm, perpage=10) => `${requestLocation}/templates/search?query=${searchTerm}&perpage=${perpage}`,
     createWorkingTemplate: `${requestLocation}/working_templates/create`,
-    getWorkingTemplates: `${requestLocation}/working_templates/owned`
+    getWorkingTemplates: `${requestLocation}/working_templates/owned`,
+    updateWorkingTemplate: (workingTemplateId) => `${requestLocation}/working_templates/${workingTemplateId}/update`,
+    deleteWorkingTemplate: (workingTemplateId) => `${requestLocation}/working_templates/${workingTemplateId}/delete`,
 }
 

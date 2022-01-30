@@ -22,3 +22,17 @@ export const getUserWorkingTemplates = async () => {
     return data;
 }
 
+export const updateWorkingTemplate = async (workingTemplateId, formData) => {
+    const response = await postRequest(routes.updateWorkingTemplate(workingTemplateId), {values: formData, _method: 'PUT'});
+    const data = await response.json();
+    return data;
+}
+
+export const deleteWorkingTemplate = async (workingTemplateId) => {
+    const response = await postRequest(routes.deleteWorkingTemplate(workingTemplateId), {
+        _method: "DELETE"
+    });
+    const data = await response.json();
+    return data;
+}
+

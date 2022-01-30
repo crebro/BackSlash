@@ -1,26 +1,24 @@
-import { deleteTemplate } from '@api/requests/templates';
+import { deleteWorkingTemplate } from '@api/requests/working_templates';
 import Modal from '@components/Modal';
-import React, { useRef } from 'react';
+import React  from 'react';
 import toast from 'react-hot-toast';
 
-function TemplateDeletionModal({ onModalClose, onTemplateDelete, template }) {
+function WorkingTemplateDeletionModal({ onModalClose, onWorkingTemplateDelete, workingTemplate }) {
     const submit = () => {;
-        const deletionPromise = deleteTemplate({ template_id: template.id}).then(() => {
-            onTemplateDelete();
+        const deletionPromise = deleteWorkingTemplate(workingTemplate.id).then(() => {
+            onWorkingTemplateDelete();
             onModalClose();
-        }).catch((error) => {
-            console.log(error);
-        });
+        })
         toast.promise(deletionPromise, {
-            loading: "Deleting the template...",
-            error: "Failed to delete the template",
-            success: "Succesfully deleted the template"
+            loading: "Deleting the working template...",
+            error: "Failed to delete the working template",
+            success: "Successfully deleted the working template"
         })
     }
 
   return <Modal>
         <div className='text-xl font-poppins font-bold'> Delete Template? </div>
-        <div className='text-sm'> You are about to delete the template {template.name}. Are you sure you want to do this? This action is completely irreversible  </div>
+        <div className='text-sm'> You are about to delete a working template from your collection. Are you sure you want to do this? This action is completely irreversible  </div>
 
         <div className='flex items-center justify-center mt-4'>
             <button onClick={() => submit()} className='w-full rounded-lg py-2 px-4 outline-none bg-[#702EFD] text-white font-poppins font-bold' > Submit </button>
@@ -29,4 +27,4 @@ function TemplateDeletionModal({ onModalClose, onTemplateDelete, template }) {
   </Modal>;
 }
 
-export default TemplateDeletionModal;
+export default WorkingTemplateDeletionModal;
