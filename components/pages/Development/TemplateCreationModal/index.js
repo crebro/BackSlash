@@ -13,9 +13,7 @@ function TemplateCreationModal({ onClose, onTemplateCreate }) {
         const nameValue = nameRef.current.value;
         const descriptionValue =  descriptionRef.current.value;
         const templateUrlValue = tempmlateUrlRef.current.value;
-        console.log(imageRef);
         const imageValue = imageRef.current.files[0];
-        console.log(imageValue);
         
         if (!nameValue || !descriptionValue) {
             toast.error("Please fill in all the fields");
