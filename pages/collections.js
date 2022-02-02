@@ -5,7 +5,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react/cjs/react.development';
 import Navigation from '../components/Navigation';
 import CollectionItem from '../components/pages/Collections/CollectionItem';
-import FlipMove from 'react-flip-move';
+import CardsDisplay from '@components/CardsDisplay';
 
 function Collections() {
   const [workingTemplates, setWorkingTemplates] = useState([])
@@ -24,13 +24,13 @@ function Collections() {
             <Link href="/explore"><div className='cursor-pointer text-xl text-white px-4 py-2 bg-[#702EFD] rounded-sm font-bold'> Explore </div></Link>
         </div>
         <div className='mt-4'>
-          <FlipMove>
+          <CardsDisplay>
             {
               workingTemplates.map((workingTemplate) => {
                 return <div key={workingTemplates.indexOf(workingTemplate)}> <CollectionItem onDelete={() => setWorkingTemplates((prevData) => prevData.filter((wt) => wt.id != workingTemplate.id ))} onUpdate={(data) => setWorkingTemplates((prevData) => [{...workingTemplate, values: data}, ...prevData.filter((wt) => wt.id != workingTemplate.id)])} workingTemplate={workingTemplate} /> </div>
               }) 
             }
-          </FlipMove>
+          </CardsDisplay>
         </div>
     </div>
   </div>;

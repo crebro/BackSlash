@@ -21,3 +21,23 @@ export const postRequest = async (url, body, initParams) => {
     return response;
 }
 
+export const postRequestWithFiles = async (url, body, initParams) => {
+    const formData  = new FormData();
+
+    for(const name in body) {
+        formData.append(name, body[name]);
+    }
+
+    console.log(formData);
+    
+    const response = await fetch(url, {
+        method: 'post',
+        headers: {
+            "Accept": "application/json"
+        },
+        body: formData,
+        credentials: 'include',
+        ...initParams});
+    return response;
+}
+

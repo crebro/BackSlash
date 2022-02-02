@@ -5,6 +5,7 @@ import { useState } from 'react/cjs/react.development';
 import Navigation from '../components/Navigation';
 import FlipMove from 'react-flip-move';
 import AuthenticatedRoute from '@components/AuthenticatedRoute';
+import CardsDisplay from '@components/CardsDisplay';
 
 function ExploreTemplates() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -32,13 +33,13 @@ function ExploreTemplates() {
             </div>
         </div>
         <div className='mt-4'>
-            <FlipMove>
+            <CardsDisplay>
             {
                 templates.map((template) => {
                     return <div key={templates.indexOf(template)}><PreviewTemplate template={template} /> </div>
                 })
             }
-            </FlipMove>
+            </CardsDisplay>
         </div>
     </div>
   </div>;

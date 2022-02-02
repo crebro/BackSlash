@@ -8,23 +8,33 @@ function Navigation() {
      const [authenticated, user, logout] = useContext(UserContext);
      const [showUserMenu, setShowUserMenu] = useState(false);
 
-  return <div className={`py-4 bg-[#212529] text-white flex items-center justify-around w-screen ${styles['navigation']}`}>
-       <Link href="/">
-          <div className='font-poppins font-bold text-3xl flex items-center cursor-pointer'>
-               <img src="/assets/images/logo.png" className='w-12 h-12' />
-               BackSlash
-          </div>
-       </Link>
-       <div className='flex font-poppins font-bold'>
-            <div className='mx-4 cursor-pointer'>Home</div>
-            <div className='mx-4 cursor-pointer'>Templates</div>
-            <div className='mx-4 cursor-pointer'>Support</div>
-            <div className='mx-4 cursor-pointer'>Contact Us</div>
+     return <div className={`py-4 bg-[#212529] text-white flex items-center justify-around w-screen ${styles['navigation']}`}>
+          <Link href="/">
+               <div className='font-poppins font-bold text-3xl flex items-center cursor-pointer'>
+                    <img src="/assets/images/logo.png" className='w-12 h-12' />
+                    BackSlash
+               </div>
+          </Link>
+          <div className='flex font-poppins font-bold'>
+               <div className='mx-4 cursor-pointer'>Home</div>
+               <Link href="/explore">
+                  <div className='mx-4 cursor-pointer'> Explore </div> 
+               </Link>
+
 
             {
-               !authenticated ?
-               <Link href="/auth/register"><div className='mx-4 cursor-pointer'>Register</div></Link>
-               : <>  <div className='mx-4 relative' > 
+          !authenticated ?
+          <Link href="/auth/register"><div className='mx-4 cursor-pointer'>Register</div></Link>
+          : <>  
+               {
+                    user.is_developer ? <Link href="/collections">
+                         <div className='mx-4 cursor-pointer'> Devleopment </div> 
+                    </Link> : ""
+               }
+               <Link href="/collections">
+                  <div className='mx-4 cursor-pointer'> Your Collections</div> 
+               </Link>
+               <div className='mx-4 relative' > 
                     <div onClick={() => setShowUserMenu(!showUserMenu)}  className='cursor-pointer text-[#CED4DA] hover-pointer'> {user.name} </div>
                     {
                          showUserMenu ? <div className='absolute bg-white px-4 py-2 rounded-lg text-black w-48' >
@@ -33,9 +43,9 @@ function Navigation() {
                          </div> : ''
                     }
                </div>   </>
-            }
-       </div>
-  </div>;
+          }
+          </div>
+     </div>;
 }
 
 export default Navigation;

@@ -4,6 +4,8 @@ import React, { useRef } from 'react';
 import toast from 'react-hot-toast';
 
 function TemplateDeletionModal({ onModalClose, onTemplateDelete, template }) {
+    console.log(template);
+
     const submit = () => {;
         const deletionPromise = deleteTemplate({ template_id: template.id}).then(() => {
             onTemplateDelete();

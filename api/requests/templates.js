@@ -1,13 +1,13 @@
 import { routes } from "@api/constants";
-import { getRequest, postRequest } from "."
+import { getRequest, postRequest, postRequestWithFiles } from "."
 
 
-export const createTemplate = async ({ name, description, template_url }) => {
-    const response = await postRequest(routes.createTemplate, {
-        name: name, description: description, template_url: template_url
+export const createTemplate = async ({ name, description, template_url, preview_image }) => {
+    const response = await postRequestWithFiles(routes.createTemplate, {
+        name: name, description: description, template_url: template_url, preview_image_file: preview_image
     });
     const data = await response.json();
-    if (!data.success)  {
+    if (!data.success) {
         return false;
     }
     return data;
@@ -61,6 +61,7 @@ export const updateTemplate = async ({template_id, name, description, template_u
 }
 
 export const deleteTemplate  = async ({template_id}) => {
+    console.log(template_id);
     const response = await postRequest(routes.deleteTemplate, {
         _method: "DELETE",
         template_id: template_id
