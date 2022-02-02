@@ -48,20 +48,23 @@ export const deleteTemplateRequirement = async (template_id, requirement_id) => 
     return data;
 }
 
-export const updateTemplate = async ({template_id, name, description, template_url})  => {
-    const response = await postRequest(routes.updateTemplate, {
+export const updateTemplate = async ({template_id, name, description, template_url, preview_image = null})  => {
+    const formData = {
         _method: 'PUT',
         template_id: template_id,
         name: name,
         description: description,
         template_url: template_url
-    });
+    };
+    if (preview_image) {
+        formData['preview_image_file'] = preview_image;
+    }
+    const response = await postRequestWithFiles(routes.updateTemplate, formData);
     const data = await response.json();
     return data;
 }
 
 export const deleteTemplate  = async ({template_id}) => {
-    console.log(template_id);
     const response = await postRequest(routes.deleteTemplate, {
         _method: "DELETE",
         template_id: template_id

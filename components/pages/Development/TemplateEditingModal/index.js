@@ -7,17 +7,19 @@ function TemplateEditingModal({ template, onModalClose, onTemplateUpdate }) {
     const nameRef = useRef();
     const descriptionRef = useRef();
     const tempmlateUrlRef = useRef();
+    const imageRef = useRef();
 
     const submit = () => {
         const nameValue = nameRef.current.value;
         const descriptionValue =  descriptionRef.current.value;
         const templateUrlValue = tempmlateUrlRef.current.value;
+        const imageValue = imageRef.current.files[0];
         
         if (!nameValue || !descriptionValue) {
             toast.error("Please fill in all the fields");
             return;
         }
-        const creationPromise = updateTemplate({ template_id: template.id, name: nameValue, description: descriptionValue, template_url: templateUrlValue}).then(() => {
+        const creationPromise = updateTemplate({ template_id: template.id, name: nameValue, description: descriptionValue, template_url: templateUrlValue, preview_image: imageValue}).then(() => {
             onTemplateUpdate();
             onModalClose();
         });
@@ -32,6 +34,8 @@ function TemplateEditingModal({ template, onModalClose, onTemplateUpdate }) {
         <div className='text-xl font-poppins font-bold'> Create your awesome Template! </div>
         <div className='text-lg mt-4 font-poppins'> Enter a name</div>
         <input ref={nameRef} defaultValue={template.name} type="text" className='py-2 px-4 outline-none bg-[#C4C4C4] rounded-sm w-full' placeholder="My amazing template" />
+        <div className='text-lg mt-4 font-poppins'> Attach an image </div>
+        <input ref={imageRef} type="file" className='py-2 px-4 outline-none bg-[#C4C4C4] rounded-sm w-full' />
         <div className='text-lg mt-4 font-poppins'> Enter the template url</div>
         <input ref={tempmlateUrlRef} defaultValue={template.template_url} type="text" className='py-2 px-4 outline-none bg-[#C4C4C4] rounded-sm w-full' placeholder="https://myamazingmteplatewebsite.com" />
         <div className='text-lg mt-4 font-poppins'> Add a description </div>
