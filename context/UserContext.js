@@ -1,5 +1,3 @@
-import { routes } from "@api/constants";
-import { postRequest } from "@api/requests";
 import getUser from "@api/requests/user";
 import LoadingPage from "@components/Loading";
 import React, {createContext, useEffect, useMemo, useState,} from "react";
@@ -13,7 +11,7 @@ export const  UserProvider = (props) => {
     const authenticated = useMemo(() => !!user, [user]);
 
     const findUserIfAuthenticated = async () => {
-        if (localStorage.getItem('isAuthenticated')) {
+        if (localStorage.getItem('token')) {
             const responseData = await getUser();
             if (responseData) {
                 setUser(responseData);
@@ -23,14 +21,9 @@ export const  UserProvider = (props) => {
     }
 
     const logoutUser = async () => {
-        const response = await postRequest(routes.logout);
-        const data = await response.json();
-        if (!data.success) {
-            return false;
-        }
         setUser(null);
-        toast.success(data.message);
-        localStorage.removeItem('isAuthenticated', false);
+        toast.success('Successfully logged you out');
+        localStorage.removeItem('token');
         return response;
     }
 
