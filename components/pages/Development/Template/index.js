@@ -4,7 +4,7 @@ import { AiFillDelete } from 'react-icons/ai';
 import { BsFillPencilFill } from "react-icons/bs";
 import { useState } from 'react/cjs/react.development';
 import TemplateDeletionModal from '../TemplateDeletionModal';
-import TemplateEditingModal from '../TemplateEditingModal';
+import TemplateFormModal from '../TemplateFormModal';
 import TemplateRequirementsModal from '../TemplateRequirementsModal';
 
 function Template({ template, onTemplateUpdate }) {
@@ -18,6 +18,7 @@ function Template({ template, onTemplateUpdate }) {
       <div onClick={() => setShowEditingModal(true)} className='w-full bg-[#32649F] cursor-pointer text-xs flex px-4 py-2 justify-between items-center text-white rounded-sm'> Edit Template Details &nbsp; <BsFillPencilFill size={15} /> </div>
       <div onClick={() => setShowDeletionModal(true)} className='w-full bg-red-500 cursor-pointer text-xs flex px-4 py-2 justify-between items-center text-white rounded-sm'> Delete Template &nbsp; <AiFillDelete size={15} /> </div>
     </CardItem>
+      
       {
         showDeletionModal ? <TemplateDeletionModal  onTemplateDelete={() => onTemplateUpdate()} onModalClose={() => setShowDeletionModal(false)} template={template} /> : ""
       }
@@ -25,7 +26,7 @@ function Template({ template, onTemplateUpdate }) {
         showRequirementsModal ? <TemplateRequirementsModal  onModalClose={() => setShowRequirementsModal(false)} id={template.id} /> : ""
       }
       {
-        showEditingModal ? <TemplateEditingModal onTemplateUpdate={() => onTemplateUpdate()} template={template} onModalClose={() => setShowEditingModal(false)} /> : ""
+        showEditingModal ? <TemplateFormModal onTemplateSubmit={() => onTemplateUpdate()} template={template} onModalClose={() => setShowEditingModal(false)} /> : ""
       }
 
   </div>;

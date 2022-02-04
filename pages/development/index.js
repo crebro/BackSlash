@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import DeveloperRoute from '@components/DeveloperRoute';
-import TemplateCreationModal from "@components/pages/Development/TemplateCreationModal";
 import { getTemplates } from "@api/requests/templates";
 import Template from "@components/pages/Development/Template";
-import FlipMove from "react-flip-move";
 import Navigation from "@components/Navigation";
 import CardsDisplay from "@components/CardsDisplay";
+import TemplateFormModal from "@components/pages/Development/TemplateFormModal";
 
 function DeveloperTemplates() {
     const [showTemplateCreationModal, setShowTemplateCreationModal] = useState(false);
@@ -38,7 +37,7 @@ function DeveloperTemplates() {
     </div>
     {
         showTemplateCreationModal ? 
-        <TemplateCreationModal onTemplateCreate={() => getDeveloperTemplates()} onClose={() => setShowTemplateCreationModal(false)} /> : ""
+        <TemplateFormModal onTemplateSubmit={() => getDeveloperTemplates()} onModalClose={() => setShowTemplateCreationModal(false)} /> : ""
     }
   </div>;
 }
