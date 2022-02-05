@@ -3,8 +3,6 @@ import PreviewTemplate from '@components/pages/Explore/PrevivewTemplate';
 import React, { useEffect } from 'react';
 import { useState } from 'react/cjs/react.development';
 import Navigation from '../components/Navigation';
-import FlipMove from 'react-flip-move';
-import AuthenticatedRoute from '@components/AuthenticatedRoute';
 import CardsDisplay from '@components/CardsDisplay';
 
 function ExploreTemplates() {
@@ -45,4 +43,4 @@ function ExploreTemplates() {
   </div>;
 }
 
-export default function () {return <AuthenticatedRoute> <ExploreTemplates /> </AuthenticatedRoute>};
+export default ExploreTemplates;

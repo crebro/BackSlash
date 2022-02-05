@@ -1,5 +1,5 @@
-const requestAddress = "localhost:8000";
-const requestLocation = `http://${requestAddress}/api`
+export const requestAddress = "http://localhost:8000";
+const requestLocation = `${requestAddress}/api`
 
 export const routes = {
     getUser: `${requestLocation}/user`,

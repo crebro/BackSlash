@@ -24,7 +24,6 @@ export const  UserProvider = (props) => {
         setUser(null);
         toast.success('Successfully logged you out');
         localStorage.removeItem('token');
-        return response;
     }
 
     useEffect(() => { 
