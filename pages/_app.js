@@ -6,7 +6,7 @@ import '../styles/globals.css'
 function MyApp({ Component }) {
   return <> <UserProvider>
     <NextNProgress color='#ffffff'/>
-    <Component {...pageProps} />
+    <Component />
   </UserProvider> <Toaster /> </>
 }
 
