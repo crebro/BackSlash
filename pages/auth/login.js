@@ -40,7 +40,7 @@ function Login() {
 
             <div className='flex mt-2'>
                 <div className='text-[#CED4DA]'> Don't have an account yet? </div> &nbsp;
-                <Link href="/auth/register"><div className='text-[#0085FF] cursor-pointer'> Register here </div></Link>
+                <Link passHref href="/auth/register" passHref><div className='text-[#0085FF] cursor-pointer'> Register here </div></Link>
             </div>
         </div>
       </div>

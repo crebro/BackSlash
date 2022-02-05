@@ -14,7 +14,7 @@ function CollectionItem({workingTemplate, onUpdate, onDelete}) {
 
   return <div >
     <CardItem template={workingTemplate.template}>
-        <Link href={putParamsOnUrl(workingTemplate.template.template_url, workingTemplate.values)}>
+        <Link passHref href={putParamsOnUrl(workingTemplate.template.template_url, workingTemplate.values)}>
           <a className='w-full' target={"_blank"} rel="noreferrer">
           <div className='bg-[#3f4246] w-full text-sm flex px-4 py-2 justify-between items-center text-white rounded-sm cursor-pointer'> Use <BsLink45Deg/> </div> 
           </a>

@@ -43,7 +43,7 @@ function Regsiter() {
 
             <div className='flex mt-2'>
                 <div className='text-[#CED4DA]'> Already have an account? </div> &nbsp;
-                <Link href="/auth/login"><div className='text-[#0085FF] cursor-pointer'> Login here </div></Link>
+                <Link passHref href="/auth/login"><div className='text-[#0085FF] cursor-pointer'> Login here </div></Link>
             </div>
         </div>
       </div>

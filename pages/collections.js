@@ -21,7 +21,7 @@ function Collections() {
     <div className='lg:mt-10 xl:mt-20 lg:w-[80%] xl:w-[70%]'>
         <div className='flex items-center justify-between'>
             <div className='text-3xl font-poppins font-bold text-white'> Your Collections</div>
-            <Link href="/explore"><div className='cursor-pointer text-xl text-white px-4 py-2 bg-[#702EFD] rounded-sm font-bold'> Explore </div></Link>
+            <Link passHref href="/explore"><div className='cursor-pointer text-xl text-white px-4 py-2 bg-[#702EFD] rounded-sm font-bold'> Explore </div></Link>
         </div>
         <div className='mt-4'>
           <CardsDisplay>

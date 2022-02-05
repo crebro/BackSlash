@@ -7,8 +7,8 @@ function HeroSection() {
     <div className='text-white mx-8'>
           <div className='font-poppins font-black text-5xl'> Fuel Your Stream</div>
           <div className='font-nunito' className="text-lg"> with free to use and customizable streaming elements</div>
-          <Link href="/explore"><button className='rounded-sm mx-2 font-fira-code bg-[#702EFD] px-4 py-2 text-2xl mt-3'> Begin </button></Link>
-          <Link href="/auth/register"><button className='rounded-sm mx-2 font-fira-code bg-[#2a61bf] px-4 py-2 text-2xl mt-3'> Login </button></Link>
+          <Link passHref href="/explore"><button className='rounded-sm mx-2 font-fira-code bg-[#702EFD] px-4 py-2 text-2xl mt-3'> Begin </button></Link>
+          <Link passHref href="/auth/register"><button className='rounded-sm mx-2 font-fira-code bg-[#2a61bf] px-4 py-2 text-2xl mt-3'> Login </button></Link>
           <div className='font-fira-code text-[#CED4DA] mt-2'> chats, games, polls, donations and more!</div>
     </div>
     <img src="/assets/images/rocket_illustration.png" className='w-80 h-80 mx-8' />

@@ -54,13 +54,13 @@ function UsageModal({ template, onModalClose }) {
                     isAuthenticated ? 
                     <div className='flex item-center justify-center'> 
                         <button onClick={() => createWorkingTemplate()} className='mx-2 mt-4 w-full rounded-lg py-2 px-4 outline-none bg-[#702EFD] text-white font-poppins font-bold' > Continue </button> 
-                        <Link href={putParamsOnUrl(template.template_url, data)}>
+                        <Link passHref href={putParamsOnUrl(template.template_url, data)}>
                             <a className='w-full' target={"_blank"} rel="noreferrer">
                                 <div className='text-center mx-2 mt-4 w-full rounded-lg py-2 px-4 outline-none bg-[#3f4246] text-white font-poppins font-bold' > Preview </div> 
                             </a>
                         </Link>
                     </div> : 
-                    <Link href={putParamsOnUrl(template.template_url, data)}>
+                    <Link passHref href={putParamsOnUrl(template.template_url, data)}>
                         <a className='w-full' target={"_blank"} rel="noreferrer">
                             <div className='text-center mx-2 mt-4 w-full rounded-lg py-2 px-4 outline-none bg-[#3f4246] text-white font-poppins font-bold' > Preview </div> 
                         </a>
