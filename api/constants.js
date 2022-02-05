@@ -1,4 +1,4 @@
-export const requestAddress = "http://localhost:8000";
+export const requestAddress = process.env.NEXT_PUBLIC_BACKEND_REQUEST_ADDRESS;
 const requestLocation = `${requestAddress}/api`
 
 export const routes = {
