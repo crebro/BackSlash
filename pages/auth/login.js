@@ -39,7 +39,7 @@ function Login() {
             <button onClick={() => submit()} className='mt-4 py-2 px-4 outline-none bg-[#702EFD] text-white font-poppins font-bold rounded-sm'> Login </button>
 
             <div className='flex mt-2'>
-                <div className='text-[#CED4DA]'> Don't have an account yet? </div>
+                <div className='text-[#CED4DA]'> Don&apos;t have an account yet? </div>
                 <Link passHref href="/auth/register"><div className='text-[#0085FF] cursor-pointer'> Register here </div></Link>
             </div>
         </div>
