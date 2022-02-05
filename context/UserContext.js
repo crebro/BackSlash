@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 
 export const UserContext = createContext();
 
-export const  UserProvider = (props) => {
+export const  UserProvider = ({ children }) => {
     const [user, setUser] = useState(); 
     const [loading, setLoading] = useState(true);
     const authenticated = useMemo(() => !!user, [user]);
@@ -31,6 +31,6 @@ export const  UserProvider = (props) => {
     }, []);
 
     return <UserContext.Provider value={[authenticated, user, logoutUser, setUser]}>
-        { !loading ? props.children : <LoadingPage/>} 
+        { !loading ? children : <LoadingPage/>} 
     </UserContext.Provider>
 }
