@@ -1,9 +1,8 @@
 import putParamsOnUrl from '@utils/putParamsonUrl';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { BsLink45Deg, BsInfoLg } from "react-icons/bs";
 import { AiFillDelete } from "react-icons/ai";
-import { useState } from 'react/cjs/react.development';
 import WorkingTemplateDeletionModal from './widgets/WorkingTemplateDeletionModal';
 import WorkingTemplateValuesUpdateModal from './widgets/WorkingTemplateUpdateModal';
 import CardItem from '@components/CardsDisplay/widgets/CardItem';

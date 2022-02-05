@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { HexColorPicker } from 'react-colorful';
-import { useState } from 'react/cjs/react.development';
 
 function RequirementField({requirement, onChange, value }) {
     const [showHexColorPicker, setShowHexColorPicker] = useState(false);

@@ -1,7 +1,6 @@
 import { UserContext } from 'context/UserContext';
 import Link from 'next/link';
-import React from 'react';
-import { useContext, useState } from 'react/cjs/react.development';
+import React, { useContext, useState } from 'react';
 import styles from "@styles/Navigation.module.css"
 
 function Navigation() {

@@ -1,8 +1,7 @@
 import { createTemplateRequirement, getTemplateRequirements } from '@api/requests/templates';
 import Modal from '@components/Modal';
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
-import { useEffect, useRef, useState } from 'react/cjs/react.development';
 import Requirement from './widgets/requirement';
 import { AiFillCloseCircle } from "react-icons/ai";
 import FlipMove from 'react-flip-move';

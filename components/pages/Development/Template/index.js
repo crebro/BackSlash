@@ -1,8 +1,7 @@
 import CardItem from '@components/CardsDisplay/widgets/CardItem';
-import React from 'react';
+import React, { useState } from 'react';
 import { AiFillDelete } from 'react-icons/ai';
 import { BsFillPencilFill } from "react-icons/bs";
-import { useState } from 'react/cjs/react.development';
 import TemplateDeletionModal from '../TemplateDeletionModal';
 import TemplateFormModal from '../TemplateFormModal';
 import TemplateRequirementsModal from '../TemplateRequirementsModal';

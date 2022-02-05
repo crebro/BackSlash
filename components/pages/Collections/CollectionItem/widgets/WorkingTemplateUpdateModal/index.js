@@ -1,7 +1,6 @@
 import { getTemplateRequirements } from '@api/requests/templates';
 import Modal from '@components/Modal';
-import React, { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
+import React, { useEffect, useState } from 'react';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import {  updateWorkingTemplate as updateWorkingTemplateApi } from '@api/requests/working_templates';
 import toast from 'react-hot-toast';

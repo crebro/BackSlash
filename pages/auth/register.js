@@ -1,9 +1,8 @@
 import Link from 'next/link';
-import React, { useRef } from 'react';
+import React, { useRef, useContext } from 'react';
 import { registerUser } from '@api/requests/user';
 import Navigation from '@components/Navigation';
 import UnAuthenticatedRoute from '@components/UnAuthenticatedRoute';
-import { useContext } from 'react/cjs/react.development';
 import { UserContext } from 'context/UserContext';
 import toast from 'react-hot-toast';
 

@@ -1,8 +1,7 @@
 import { getUserWorkingTemplates } from '@api/requests/working_templates';
 import AuthenticatedRoute from '@components/AuthenticatedRoute';
 import Link from 'next/link';
-import React, { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
+import React, { useEffect, useState } from 'react';
 import Navigation from '../components/Navigation';
 import CollectionItem from '../components/pages/Collections/CollectionItem';
 import CardsDisplay from '@components/CardsDisplay';

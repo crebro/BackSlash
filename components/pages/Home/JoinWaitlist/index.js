@@ -1,9 +1,8 @@
 import { developerActivation } from '@api/requests/user';
 import Modal from '@components/Modal';
 import { UserContext } from 'context/UserContext';
-import React, {useContext} from 'react';
+import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
-import { useState } from 'react/cjs/react.development';
 
 function JoinWaitlist() {
   const [authenticated, user] = useContext(UserContext);

@@ -1,7 +1,6 @@
 import { searchTemplates } from '@api/requests/templates';
 import PreviewTemplate from '@components/pages/Explore/PrevivewTemplate';
-import React, { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
+import React, { useEffect, useState } from 'react';
 import Navigation from '../components/Navigation';
 import CardsDisplay from '@components/CardsDisplay';
 
