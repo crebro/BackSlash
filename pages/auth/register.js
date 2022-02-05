@@ -50,6 +50,6 @@ function Regsiter() {
   </div>;
 }
 
-export default function () {
+export default function RegisterRoute () {
   return <UnAuthenticatedRoute> <Regsiter/> </UnAuthenticatedRoute>
 };

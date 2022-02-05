@@ -42,4 +42,4 @@ function DeveloperTemplates() {
   </div>;
 }
 
-export default function () { return <DeveloperRoute><DeveloperTemplates/> </DeveloperRoute>};
+export default function DevelopmentRoute () { return <DeveloperRoute><DeveloperTemplates/> </DeveloperRoute>};

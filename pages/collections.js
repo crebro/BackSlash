@@ -36,4 +36,4 @@ function Collections() {
   </div>;
 }
 
-export default function () {return <AuthenticatedRoute><Collections /></AuthenticatedRoute> };
+export default function UserCollections () {return <AuthenticatedRoute><Collections /></AuthenticatedRoute> };

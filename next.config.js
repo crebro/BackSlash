@@ -6,4 +6,7 @@ module.exports = {
     return config;
   },
   reactStrictMode: false,
+  images: {
+    domains: ['localhost', 'https://backslash-backend.herokuapp.com/']
+  }
 }

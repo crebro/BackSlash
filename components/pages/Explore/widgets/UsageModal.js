@@ -42,12 +42,12 @@ function UsageModal({ template, onModalClose }) {
     return <Modal> 
         <div className='absolute cursor-pointer rounded-lg bg-red-500 text-white px-2 py-2 top-[10px] right-[10px]' onClick={() => onModalClose()}> <AiFillCloseCircle/> </div>
         <div className='font-bold font-poppins text-xl my-2'> Add template to your collection </div>
-        <div className='text-sm mb-4'> Fill in the following fields to continue, if there are none, you can continue as well. Fields marked "<span className='text-red-500'>*</span>" are mandatory </div>
+        <div className='text-sm mb-4'> Fill in the following fields to continue, if there are none, you can continue as well. Fields marked <span className='text-red-500'>*</span> are mandatory </div>
         {
             requirements ? <div>
                 {
                     requirements.map((requirement) => {
-                        return <RequirementField value={data[requirement.key]} requirement={requirement} onChange={(value) => { setData((prevData) => { return { ...prevData, [requirement.key]: value, }})}} />
+                        return <div key={requirements.indexOf(requirement)} ><RequirementField value={data[requirement.key]} requirement={requirement} onChange={(value) => { setData((prevData) => { return { ...prevData, [requirement.key]: value, }})}} /> </div>
                     })
                 }
                 {

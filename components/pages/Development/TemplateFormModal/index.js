@@ -60,7 +60,7 @@ function TemplateFormModal({ onModalClose, onTemplateSubmit, template }) {
         <div className='text-lg mt-4 font-poppins'> Enter the template url</div>
         <input ref={templateUrlRef} defaultValue={template ? template.template_url : ''} type="text" className='py-2 px-4 outline-none bg-[#C4C4C4] rounded-sm w-full' placeholder="https://myamazingmteplatewebsite.com" />
         <div className='text-lg mt-4 font-poppins'> Add a description </div>
-        <textarea ref={descriptionRef} defaultValue={template ? template.description : ''} ref={descriptionRef} className="text" className='mt-2 py-2 px-4 outline-none bg-[#C4C4C4] rounded-sm w-full' /> 
+        <textarea ref={descriptionRef} defaultValue={template ? template.description : ''} ref={descriptionRef} className='mt-2 py-2 px-4 outline-none bg-[#C4C4C4] rounded-sm w-full' /> 
 
         <div className='flex items-center justify-center mt-4'>
             <button onClick={() => template ? update() : create()} className='w-full rounded-lg py-2 px-4 outline-none bg-[#702EFD] text-white font-poppins font-bold' > Submit </button>

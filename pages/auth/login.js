@@ -47,6 +47,6 @@ function Login() {
   </div>;
 }
 
-export default function () {
+export default function LoginRoute() {
   return <UnAuthenticatedRoute> <Login/> </UnAuthenticatedRoute>;
 };

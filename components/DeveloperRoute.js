@@ -14,7 +14,7 @@ function DeveloperRoute({ children }) {
         if (!user.is_developer) {
             router.push('/collections');
         }
-    }, [])
+    }, [isAuthenticated, user.is_developer, router])
 
     if (!isAuthenticated || !user.is_developer) { return <LoadingPage /> };
     return children;
