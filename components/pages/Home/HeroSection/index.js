@@ -10,6 +10,13 @@ function HeroSection() {
           <Link passHref href="/explore"><button className='rounded-sm mr-2 font-fira-code bg-[#702EFD] px-4 py-2 text-md sm:text-2xl mt-3'> Begin </button></Link>
           <Link passHref href="/auth/register"><button className='rounded-sm mr-2 font-fira-code bg-[#2a61bf] px-4 py-2 text-md sm:text-2xl mt-3'> Login </button></Link>
           <div className='font-fira-code text-[#CED4DA] mt-2'> chats, games, polls, donations and more!</div>
+          <Link href="https://youtu.be/3AWyk9qckNc" >
+            <a target="_blank" ref={'noreferrer'}>
+              <div className='font-fira-code text-[#CED4DA] mt-4 underline cursor-pointer'>
+                Not sure where to get started? 
+              </div>
+            </a>
+          </Link>
     </div>
     <img src="/assets/images/rocket_illustration.png" className='w-60 h-60 sm:w-80 sm:h-80 mx-8' />
   </div>;
