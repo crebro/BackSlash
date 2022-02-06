@@ -4,7 +4,7 @@ import Service from './widgets/Service';
 
 function OurServices() {
   return <div className={`${styles['parallelogram']} bg-[#343A40] py-28 flex flex-col items-center justify-center w-screen text-white`}>
-    <div className='w-[80%] lg:w-[60%] xl:w-[50%] flex flex-col items-center justify-center'>
+    <div className='w-[80%] lg:w-[50%] xl:w-[40%] flex flex-col items-center justify-center'>
 
       <div className='text-4xl md:text-5xl font-poppins font-black'> Our Offerings </div>
       <div className='text-xl text-center font-nunito'> We try to provide you with the best streaming elements all in one place</div>

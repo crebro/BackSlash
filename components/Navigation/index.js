@@ -26,8 +26,8 @@ function Navigation() {
           <Link passHref href="/auth/register"><div className='mx-4 cursor-pointer'>Register</div></Link>
           : <>  
                {
-                    user.is_developer ? <Link passHref href="/collections">
-                         <div className='mx-4 cursor-pointer'> Devleopment </div> 
+                    user.is_developer ? <Link passHref href="/development">
+                         <div className='mx-4 cursor-pointer'> Development </div> 
                     </Link> : ""
                }
                <Link passHref href="/collections">
