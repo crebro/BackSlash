@@ -46,7 +46,7 @@ function UsageModal({ template, onModalClose }) {
             requirements ? <div>
                 {
                     requirements.map((requirement) => {
-                        return <div key={requirements.indexOf(requirement)} ><RequirementField value={data[requirement.key]} requirement={requirement} onChange={(value) => { setData((prevData) => { return { ...prevData, [requirement.key]: value, }})}} /> </div>
+                        return <div key={requirement.id} ><RequirementField value={data[requirement.key]} requirement={requirement} onChange={(value) => { setData((prevData) => { return { ...prevData, [requirement.key]: value, }})}} /> </div>
                     })
                 }
                 {

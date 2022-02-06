@@ -64,7 +64,7 @@ function TemplateRequirementsModal({ id, onModalClose }) {
         <FlipMove>
         {
             requirements.map((requirement) => {
-                return <div key={requirements.indexOf(requirement)}> <Requirement id={requirement.id} requirementKey={requirement.key} is_required={requirement.is_required} template_id={id} onDelete={() => {setRequirements(requirements.filter((req) => req.id != requirement.id))}} /> </div>
+                return <div key={requirement.id}> <Requirement id={requirement.id} requirementKey={requirement.key} is_required={requirement.is_required} template_id={id} onDelete={() => {setRequirements(requirements.filter((req) => req.id != requirement.id))}} /> </div>
             })
         }
         </FlipMove>

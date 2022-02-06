@@ -31,7 +31,7 @@ function DeveloperTemplates() {
         </div>
         <div className='mt-4 w-full'>
             <CardsDisplay>
-                {templates.map((template) => <div key={templates.indexOf(template)}> <Template onTemplateUpdate={() => getDeveloperTemplates()} template={{...template}} /> </div>)}
+                {templates.map((template) => <div key={template.id}> <Template onTemplateUpdate={() => getDeveloperTemplates()} template={{...template}} /> </div>)}
             </CardsDisplay>
         </div>
     </div>

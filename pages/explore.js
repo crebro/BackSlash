@@ -33,7 +33,7 @@ function ExploreTemplates() {
             <CardsDisplay>
             {
                 templates.map((template) => {
-                    return <div key={templates.indexOf(template)}><PreviewTemplate template={template} /> </div>
+                    return <div key={template.id}><PreviewTemplate template={template} /> </div>
                 })
             }
             </CardsDisplay>

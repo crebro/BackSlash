@@ -32,7 +32,7 @@ function WorkingTemplateValuesUpdateModal({ workingTemplate, onModalClose, onUpd
 
     useEffect(() => {
         getRequirements()
-    }, [getRequirements])
+    }, [])
 
   return <Modal> 
         <div className='absolute cursor-pointer rounded-lg bg-red-500 text-white px-2 py-2 top-[10px] right-[10px]' onClick={() => onModalClose()}> <AiFillCloseCircle/> </div>
@@ -41,7 +41,7 @@ function WorkingTemplateValuesUpdateModal({ workingTemplate, onModalClose, onUpd
             requirements ? <div>
                 {
                     requirements.map((requirement) => {
-                        return <div key={requirements.indexOf(requirement)}> <RequirementField value={workingTemplate.values[requirement.key]} requirement={requirement} onChange={(value) => { setData((prevData) => { return { ...prevData, [requirement.key]: value, }})}} /> </div>
+                        return <div key={requirement.id}> <RequirementField value={data[requirement.key]} requirement={requirement} onChange={(value) => { setData((prevData) => { return { ...prevData, [requirement.key]: value, }})}} /> </div>
                     })
                 }
                 <button onClick={() => updateWorkingTemplate()} className='my-4 w-full rounded-lg py-2 px-4 outline-none bg-[#702EFD] text-white font-poppins font-bold' > Submit </button>

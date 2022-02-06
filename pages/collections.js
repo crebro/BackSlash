@@ -26,7 +26,7 @@ function Collections() {
           <CardsDisplay>
             {
               workingTemplates.map((workingTemplate) => {
-                return <div key={workingTemplates.indexOf(workingTemplate)}> <CollectionItem onDelete={() => setWorkingTemplates((prevData) => prevData.filter((wt) => wt.id != workingTemplate.id ))} onUpdate={(data) => setWorkingTemplates((prevData) => [{...workingTemplate, values: data}, ...prevData.filter((wt) => wt.id != workingTemplate.id)])} workingTemplate={workingTemplate} /> </div>
+                return <div key={workingTemplate.id}> <CollectionItem onDelete={() => setWorkingTemplates((prevData) => prevData.filter((wt) => wt.id != workingTemplate.id ))} onUpdate={(data) => setWorkingTemplates((prevData) => [{...workingTemplate, values: data}, ...prevData.filter((wt) => wt.id != workingTemplate.id)])} workingTemplate={workingTemplate} /> </div>
               }) 
             }
           </CardsDisplay>
