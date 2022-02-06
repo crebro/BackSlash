@@ -32,8 +32,8 @@ function JoinWaitlist() {
   }
 
   return <div id='waitlist' className={`py-10 flex flex-col items-center justify-center w-screen focus:bg-slate-800`}>
-      <div className='text-3xl font-poppins font-black'> Join us in this amazing journey </div>
-      <div className='text-xl font-nunito mt-4'> Join our waitlist, we will provide you with the most of exclusive features if yo do</div>
+      <div className='text-xl text-center md:text-3xl font-poppins font-black'> Join us in this amazing journey </div>
+      <div className='text-xl text-center font-nunito mt-4'> Join our waitlist, we will provide you with the most of exclusive features if yo do</div>
       <input className='mt-4 py-2 px-4 w-1/2 lg:w-1/3 outline-none bg-[#C4C4C4] rounded-sm' placeholder='johndoe@gmail.com' />
       <button className='mt-2 py-2 px-4 w-1/2 lg:w-1/3 outline-none bg-[#702EFD] text-white font-fira-code rounded-sm'> Count me In! </button>
       { authenticated ? !user.is_developer ? <div onClick={() => setShowDeveloperActivationModal(true)} className='text-[#CED4DA] mt-4 cursor-pointer'>Click here for developer activation</div> : "" : ""}
