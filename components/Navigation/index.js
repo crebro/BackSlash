@@ -7,14 +7,14 @@ function Navigation() {
      const [authenticated, user, logout] = useContext(UserContext);
      const [showUserMenu, setShowUserMenu] = useState(false);
 
-     return <div className={`py-4 bg-[#212529] text-white flex items-center justify-around w-screen ${styles['navigation']}`}>
+     return <div className={`py-4 bg-[#212529] text-white flex flex-wrap items-center justify-around w-screen ${styles['navigation']}`}>
           <Link passHref href="/">
                <div className='font-poppins font-bold text-3xl flex items-center cursor-pointer'>
                     <img src="/assets/images/logo.png" className='w-12 h-12' />
                     BackSlash
                </div>
           </Link>
-          <div className='flex font-poppins font-bold'>
+          <div className='flex items-center justify-center font-poppins font-bold flex-wrap'>
                <div className='mx-4 cursor-pointer'>Home</div>
                <Link passHref href="/explore">
                   <div className='mx-4 cursor-pointer'> Explore </div> 

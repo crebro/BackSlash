@@ -17,10 +17,10 @@ function Collections() {
 
   return <div className='min-w-screen min-h-screen bg-[#343A40] flex flex-col items-center' >
     <Navigation />
-    <div className='lg:mt-10 xl:mt-20 lg:w-[80%] xl:w-[70%]'>
-        <div className='flex items-center justify-between'>
+    <div className='mt-10 xl:mt-20 w-[95%] lg:w-[90%] xl:w-[70%]'>
+        <div className='flex flex-col sm:flex-row items-center justify-between'>
             <div className='text-3xl font-poppins font-bold text-white'> Your Collections</div>
-            <Link passHref href="/explore"><div className='cursor-pointer text-xl text-white px-4 py-2 bg-[#702EFD] rounded-sm font-bold'> Explore </div></Link>
+            <Link passHref href="/explore"><div className='mt-2 sm:mt-0 cursor-pointer text-xl text-white px-4 py-2 bg-[#702EFD] rounded-sm font-bold'> Explore </div></Link>
         </div>
         <div className='mt-4'>
           <CardsDisplay>
